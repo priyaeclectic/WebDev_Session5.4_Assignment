@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Assignment 5.4</title>
+</head>
+<body>
+<p id="emp"></p>
+<button onclick="createEmployee('ABC','Bsc',35000);">Add Employee</button><br><br>
+<button onclick="removeproperty();">Remove property</button>
+</body>
+
+<script type="text/javascript">
+	
+	function createEmployee(name,skill,sal){									
+		
+		var EmpDetails = {
+						Empname:name,						/*Create employee object with properties*/
+						Skills:skill,
+						Salary:sal
+						};
+	document.getElementById("emp").innerHTML=EmpDetails.Empname+","+EmpDetails.Skills+","+EmpDetails.Salary;
+	}
+
+	function addproperty(){											/*Adds property to object and refreshes the select list accordingly*/
+	    var select = document.getElementById("property-list");
+	    if(document.getElementById('mothername').value.length>0){
+	    	select.options[select.options.length] = new Option(document.getElementById('mothername').id,select.options.length);
+		}
+		if(document.getElementById('eyecolor').value.length>0){
+	    	select.options[select.options.length] = new Option(document.getElementById('eyecolor').id,select.options.length);
+		}
+	    options[selectedIndex].value&&self.location.reload(true);
+	}
+
+	function removeproperty(){										/*Removes property from the object and refreshes the select list accordingly*/
+	    var select = document.getElementById("property-list");
+	    var prop=select.options[select.selectedIndex].value;
+	    delete StudentDetails[prop];
+	    select.options[select.selectedIndex] = null;
+	}		 					 
+</script>
+</html>
